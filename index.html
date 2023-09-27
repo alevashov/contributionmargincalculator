@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-72DE9EZ4TD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-72DE9EZ4TD');
+</script>
+    <title>Contribution Margin Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<h1>Contribution Margin Calculator for Online Retailers</h1>
+
+<form id="calculator-form">
+    <label for="average_order_value">Average Order Value ($):</label>
+    <input type="number" id="average_order_value" name="average_order_value" value="100"> <br><br>
+
+    <label for="COGS">Cost of Goods Sold ($):</label>
+    <input type="number" id="COGS" name="COGS" value="20"><br><br>
+
+    <label for="shipping_costs">Shipping Costs ($):</label>
+    <input type="number" id="shipping_costs" name="shipping_costs" value="10"><br><br>
+
+    <label for="package_materials">Package Materials ($):</label>
+    <input type="number" id="package_materials" name="package_materials" value="2"><br><br>
+
+    <label for="picking_handling">Picking/Handling ($):</label>
+    <input type="number" id="picking_handling" name="picking_handling" value="2"><br><br>
+
+    <label for="payment_fees_percent">Payment Fees (%):</label>
+    <input type="number" id="payment_fees_percent" name="payment_fees_percent" value="2"><br><br>
+
+    <label for="payment_fees_per_order">Payment Fees Per Order ($):</label>
+    <input type="number" id="payment_fees_per_order" name="payment_fees_per_order" value="0.3"><br><br>
+
+    <label for="ecommerce_platform_fee_percent">eCommerce Platform Fee (%):</label>
+    <input type="number" id="ecommerce_platform_fee_percent" name="ecommerce_platform_fee_percent" value="1.5"><br><br>
+
+    <label for="ecommerce_platform_fee_per_order">eCommerce Platform Fee Per Order ($):</label>
+    <input type="number" id="ecommerce_platform_fee_per_order" name="ecommerce_platform_fee_per_order" value="0"><br><br>
+
+    <label for="returns_percent">Returns (%):</label>
+    <input type="number" id="returns_percent" name="returns_percent" value="3"><br><br>
+
+    <label for="promotions_percent">Promotions (%):</label>
+    <input type="number" id="promotions_percent" name="promotions_percent" value="10"><br><br>
+
+    <label for="advertising_percent">Advertising (%):</label>
+    <input type="number" id="advertising_percent" name="advertising_percent" value="30"><br><br>
+
+    <label for="other_costs">Other Costs ($):</label>
+    <input type="number" id="other_costs" name="other_costs" value="2"><br><br>
+
+    <input type="button" value="Calculate" onclick="calculateCM()">
+	
+	<h3>Interim parameters</h3>
+	<p>Total Payment Cost: <span id="total_payment_cost"></span></p>
+    <p>Total eCommerce Platform Cost: <span id="total_ecommerce_platform_cost"></span></p>
+    <p>Total Variable Costs: <span id="total_variable_costs"></span></p>
+</form>
+
+<h2>Final results:</h2>
+<p>Contribution Margin: <span id="contribution_margin"></span></p>
+<p>Contribution Margin Ratio: <span id="contribution_margin_ratio"></span>%</p>
+
+<script src="script.js"></script>
+<footer>
+    <p>&copy; Alex Levashov, 2023, <a href="http://www.levashov.biz" target="_blank">www.levashov.biz</a></p>
+</footer>
+
+</body>
+</html>

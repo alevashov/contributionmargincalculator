@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333366;
+    border-bottom: 2px solid #333366;
+}
+
+h3 {
+    color: #336699;
+    border-bottom: 1px solid #336699;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label, input {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+}
