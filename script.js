@@ -1,3 +1,65 @@
+function createStackedBarChart(contribution_margin, COGS, average_order_value, total_variable_costs) {
+    // Get context for the canvas
+    var ctx = document.getElementById('contributionMarginChart').getContext('2d');
+    
+    // Adjust values so that they stack up to Average Order Value
+    var adjusted_total_variable_costs = average_order_value - contribution_margin - COGS;
+    
+    // Create a new Chart instance
+    var chart = new Chart(ctx, {
+        // Type of chart to create
+        type: 'bar',
+        
+        // Data for the chart
+        data: {
+            // Labels for the x-axis
+            labels: ['Your order structure'],
+            
+            // Datasets for each segment
+            datasets: [
+                {
+                    // Label for Contribution Margin
+                    label: 'Contribution Margin',
+                    data: [contribution_margin],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                },
+                {
+                    // Label for COGS
+                    label: 'COGS',
+                    data: [COGS],
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                },
+                {
+                    // Label for Adjusted Total Variable Costs
+                    label: 'Adjusted Total Variable Costs',
+                    data: [adjusted_total_variable_costs],
+                    backgroundColor: 'rgba(153, 102, 255, 0.6)'
+                },                
+            ]
+        },
+        
+        // Chart options
+        options: {
+            // Configuration for scales
+            scales: {
+                // X-axis scale
+                x: {
+                    // Enable stacking
+                    stacked: true,
+                },
+                // Y-axis scale
+                y: {
+                    // Enable stacking
+                    stacked: true,
+                    // Set min and max to ensure chart height is 100%
+                    min: 0,
+                    max: average_order_value
+                }
+            }
+        }
+    });
+}
+
 function calculateCM() {
     // Get form values
     var average_order_value = parseFloat(document.getElementById('average_order_value').value);
@@ -46,5 +108,7 @@ function calculateCM() {
     // Display Final Results
     document.getElementById('contribution_margin').innerText = contribution_margin.toFixed(2);
     document.getElementById('contribution_margin_ratio').innerText = contribution_margin_ratio.toFixed(2);
+	// Create the stacked bar chart
+    createStackedBarChart(contribution_margin, COGS, average_order_value, total_variable_costs);
 }
 
