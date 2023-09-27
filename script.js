@@ -1,4 +1,10 @@
+var existingChart;  // Declare this at the top of your script
+
+
 function createStackedBarChart(contribution_margin, COGS, average_order_value, total_variable_costs) {
+	if (existingChart) {
+        existingChart.destroy();
+    }	
     // Get context for the canvas
     var ctx = document.getElementById('contributionMarginChart').getContext('2d');
     
@@ -6,7 +12,7 @@ function createStackedBarChart(contribution_margin, COGS, average_order_value, t
     var adjusted_total_variable_costs = average_order_value - contribution_margin - COGS;
     
     // Create a new Chart instance
-    var chart = new Chart(ctx, {
+    existingChart = new Chart(ctx, {
         // Type of chart to create
         type: 'bar',
         
