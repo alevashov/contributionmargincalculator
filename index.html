@@ -16,7 +16,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
+<div id="calculator-container">
+<div id="parameters-container">
 <h1>Contribution Margin Calculator for Online Retailers</h1>
 
 <form id="calculator-form">
@@ -70,10 +71,12 @@
 <h2>Final results:</h2>
 <p>Contribution Margin: <span id="contribution_margin"></span></p>
 <p>Contribution Margin Ratio: <span id="contribution_margin_ratio"></span>%</p>
-
-<h3>Stacked Bar Chart</h3>
-<canvas id="contributionMarginChart" width="400" height="200"></canvas>
-
+</div>
+<div id="chart-container">
+    <h3>Order structure chart</h3>
+    <canvas id="contributionMarginChart" width="400" height="200"></canvas>
+</div>
+</div>
 
 <script src="script.js"></script>
 <footer>
